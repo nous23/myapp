@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <link type="text/css" rel="stylesheet" href="view/list_notes.css">
+    <link rel="stylesheet" href="view/fontawesome/css/v4-shims.css">
+    <link rel="stylesheet" href="view/fontawesome/css/all.css">
+</head>
+<body>
+    <div class="top">
+        <div class="logo">
+            <a class="logo-text" href="http://127.0.0.1:8080/note">NOTES</a>
+        </div>
+        <div class="navigation">
+            <ul>
+                <li>HOME</li>
+                <li>ABOUT</li>
+            </ul>
+        </div>
+    </div>
+    <div class="search">
+        <form>
+            <label>
+                <input type="search" class="search_box" placeholder="Search notes">
+            </label>
+            <button type="submit"><span class="fa fa-search fa-1x"></span></button>
+        </form>
+    </div>
+    <div class="main">
+        <aside class="sidebar">
+            <div class="options">
+                <div class="one-option">
+                    <div class="today-icon icon fa fa-sun-o fa-1x"></div>
+                    <div class="today-text">今日</div>
+                </div>
+                <div class="one-option">
+                    <div class="today-icon icon fa fa-calendar-week"></div>
+                    <div class="today-text">一周内</div>
+                </div>
+                <div class="one-option">
+                    <div class="today-icon icon fa fa-calendar"></div>
+                    <div class="today-text">一月内</div>
+                </div>
+                <div class="one-option">
+                    <div class="today-icon icon fa fa-flag"></div>
+                    <div class="today-text">一年内</div>
+                </div>
+            </div>
+            <hr class="split-line" />
+            <div class="create-note">
+                <div class="one-option">
+                    <div class="today-icon icon fa fa-plus"></div>
+                    <div class="today-text">添加笔记</div>
+                </div>
+            </div>
+        </aside>
+        <div class="notes">
+            {{ range $note := .notes }}
+                <ul class="note_content">
+                    <li>{{$note.ID}} <strong>{{$note.Date}}</strong> {{$note.Content}}</li>
+                </ul>
+            {{end}}
+        </div>
+    </div>
+    <footer>
+        <div>contact me: cchen23@outlook.com</div>
+    </footer>
+</body>
+</html>
