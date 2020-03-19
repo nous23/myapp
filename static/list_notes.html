@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Notes</title>
-    <link type="text/css" rel="stylesheet" href="view/list_notes.css">
-    <link rel="stylesheet" href="view/fontawesome/css/v4-shims.css">
-    <link rel="stylesheet" href="view/fontawesome/css/all.css">
+    <link type="text/css" rel="stylesheet" href="static/list_notes.css">
+    <link rel="stylesheet" href="static/fontawesome/css/v4-shims.css">
+    <link rel="stylesheet" href="static/fontawesome/css/all.css">
 </head>
 <body>
     <div class="top">
@@ -19,6 +19,7 @@
             </ul>
         </div>
     </div>
+    <div class="content">
     <div class="search">
         <form>
             <label>
@@ -56,12 +57,13 @@
             </div>
         </aside>
         <div class="notes">
-            {{ range $note := .notes }}
+            {{ range $note := . }}
                 <ul class="note_content">
-                    <li>{{$note.ID}} <strong>{{$note.Date}}</strong> {{$note.Content}}</li>
+                    <li>{{$note.ID}} <strong>{{$note.Time}}</strong> {{$note.Content}}</li>
                 </ul>
             {{end}}
         </div>
+    </div>
     </div>
     <footer>
         <div>contact me: cchen23@outlook.com</div>

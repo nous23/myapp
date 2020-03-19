@@ -1,5 +1,8 @@
-body {
+
+
+html, body {
     margin: 0;
+    height: 100%;
 }
 
 a:link {
@@ -134,6 +137,12 @@ form .search_box {
 
 .search {
     display: block;
+}
+
+.content {
+    height: 100%;
+    background-image: url(image/IMG_9591.JPG);
+    background-size: cover;
 }
 
 footer {

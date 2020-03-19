@@ -12,5 +12,9 @@ func ListNotes(ctx *gin.Context) {
 		ctx.String(http.StatusInternalServerError, "list notes failed")
 		return
 	}
-	ctx.HTML(http.StatusOK, "notes.html", notes)
+	ctx.HTML(http.StatusOK, "list_notes.html", notes)
+}
+
+func GetTest(ctx *gin.Context) {
+	ctx.HTML(http.StatusOK, "test.html", nil)
 }
